@@ -11,6 +11,11 @@ const reducer = (state, action) => {
           contact => contact.id !== action.payload
         )
       };
+    case "DELETE_CONTACT":
+      return {
+        ...state,
+        contacts: [action.payload, ...state.contacts]
+      };
 
     default:
       return state;
